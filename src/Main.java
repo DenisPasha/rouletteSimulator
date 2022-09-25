@@ -26,7 +26,14 @@ public class Main {
 
         while (!command.equalsIgnoreCase("End")){
 
-            input= Integer.parseInt(command);
+            try {
+                input= Integer.parseInt(command);
+
+            }catch (NumberFormatException nfe){
+                System.out.println("Incorrect input! End of game , please enter digit! ");
+                break;
+            }
+
 
             Random random= new Random();
             int randomNum=random.nextInt(37)+1;
